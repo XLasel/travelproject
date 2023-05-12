@@ -46,9 +46,10 @@
         line-height: normal;
 
         & p:not(:last-of-type) {
-            margin-bottom: 1.2em;
+            margin-bottom: 28px;
+            
             @media (max-width: 768px) {
-                margin-bottom: 1.4em;
+                margin-bottom: 23px;
               }
         }
     }

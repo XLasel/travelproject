@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YourTour</title>
-  <!-- <link rel="icon" href="" type="image/ico"> -->
+  <link rel="icon" href="./favicon.ico" type="image/ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=&display=swap" rel="stylesheet">
@@ -175,11 +175,11 @@
             </div>
             <div class="constructor__form-field">
               <label for="date-1" class="constructor__form-label">Дата от</label>
-              <input class="constructor__form-input constructor__form-input--date-placeholder" type="date" id="date-from" name="trip-start">
+              <input class="constructor__form-date constructor__form-input--date-placeholder" type="date" id="date-from" name="trip-start">
             </div>
             <div class="constructor__form-field">
               <label for="date-2" class="constructor__form-label">Дата до</label>
-              <input class="constructor__form-input constructor__form-input--date-placeholder" type="date" id="date-to" name="trip-end">
+              <input class="constructor__form-date constructor__form-input--date-placeholder" type="date" id="date-to" name="trip-end">
             </div>
             <div class="constructor__form-field">
               <label for="comment" class="constructor__form-label">Комментарий</label>
@@ -426,16 +426,26 @@
         <p class="footer__text">Наши социальные сети</p>
         <ul class="footer__social">
           <li class="footer__social-item">
-            <img class="footer__social-img" src="/img/socials/inst.svg"
-                alt="instagram"><a class="footer__social-link" href="#!">instagram</a>
+            <picture>
+              <source srcset="/img/socials/inst-small.svg" media="(max-width: 768px)">
+              <img class="footer__social-img" src="/img/socials/inst.svg"
+                alt="instagram">
+            </picture>
+            <a class="footer__social-link" href="#!">instagram</a>
           </li>
           <li class="footer__social-item">
-            <img class="footer__social-img" src="/img/socials/fb.svg"
-                alt="facebook"><a class="footer__social-link" href="#!">facebook</a>
+            <picture>
+              <source srcset="/img/socials/fb-small.svg" media="(max-width: 768px)">
+              <img class="footer__social-img footer__social-img--mrg" src="/img/socials/fb.svg"
+                alt="facebook">
+            </picture><a class="footer__social-link" href="#!">facebook</a>
           </li>
           <li class="footer__social-item">
-            <img class="footer__social-img" src="/img/socials/vk.svg"
-                alt="vkontakte"><a class="footer__social-link" href="#!">vkontakte</a>
+            <picture>
+              <source srcset="/img/socials/vk-small.svg" media="(max-width: 768px)">
+              <img class="footer__social-img" src="/img/socials/vk.svg"
+                alt="vkontakte">
+            </picture><a class="footer__social-link" href="#!">vkontakte</a>
           </li>
         </ul>
       </div>

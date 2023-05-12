@@ -66,10 +66,12 @@
 
     &__logo-img {
         display: block;
+        width: 182px;
+        height: 32px;
 
         @media (max-width: 769px) {
             width: 133px;
-            height: 22px;
+            height: 24px;
         }
     }
 
@@ -81,6 +83,14 @@
 
         gap: 50px;
 
+        @media (max-width: 1024px) {
+            gap: 30px
+        }
+
+        @media (max-width: 950px) {
+            display: none;
+        }
+
         @media(any-hover: hover) {
             & a:hover {
                 text-decoration-line: underline;
@@ -88,11 +98,6 @@
                 text-decoration-thickness: 1px;
             }
         }
-
-        @media (max-width: 950px) {
-            display: none;
-        }
-
     }
 
     &__content {
@@ -136,16 +141,18 @@
     }
 
     &__text {
-        max-width: 562px;
+        max-width: 612px;
         padding: 0 25px;
 
-        @media (min-width: 576px) and (max-width: 1024px) {
-            max-width: 442px;
+        @media (max-width: 1024px) {
+            max-width: 492px;
+
+            @media (max-width: 576px) {
+                max-width: 360px;
+            }
         }
 
-        @media (max-width: 576px) {
-            max-width: 310px;
-        }
+        
     }
 
     &__btn {

@@ -125,11 +125,11 @@
     }
 
     &__title {
-        // margin-bottom: 16px;
-        margin-bottom: 0.568em;
-        // @media (max-width: 576px) {
-        //     margin-bottom: 13px;
-        // }
+        margin-bottom: 16px;
+        // margin-bottom: 0.568em;
+        @media (max-width: 576px) {
+            margin-bottom: 13px;
+        }
     }
 
     &__image {

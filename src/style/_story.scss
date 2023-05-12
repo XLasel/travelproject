@@ -65,12 +65,12 @@
     }
 
     &__tittle {
-        // margin-bottom: 37px;
-        margin-bottom: 0.89em;
+        margin-bottom: 37px;
+        // margin-bottom: 0.89em;
 
-        // @media (max-width: 576px) {
-        //     margin-bottom: 20px;
-        // }
+        @media (max-width: 576px) {
+            margin-bottom: 20px;
+        }
     }
 
     &__text {
@@ -80,11 +80,10 @@
     }
 
     &__list {
-        padding-left: 32px;
+        padding-left: 30px;
 
         & li::marker {
-            font-size: 0.7em;
-            vertical-align: sub;
+            font-size: 16px;
         }
     }
 
@@ -95,8 +94,9 @@
 
     &__social {
         display: flex;
-        gap: 35px;
+        gap: 36px;
 
+        padding: 0;
         list-style: none;
 
         @media (max-width: 576px) {

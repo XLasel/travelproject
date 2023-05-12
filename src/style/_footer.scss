@@ -5,9 +5,9 @@
         display: flex;
         justify-content: space-between;
         gap: 25px;
-        align-items: center;
+        align-items: stretch;
 
-        padding: 30px 0;
+        padding: 30px 1px;
 
         @media (max-width: 768px) {
             flex-wrap: wrap;
@@ -16,7 +16,7 @@
         }
 
         @media (max-width: 576px) {
-            padding: 21px 0;
+            padding: 21px 1px;
         }
     }
 
@@ -31,20 +31,25 @@
         padding: 0;
         list-style: none;
 
-        @media (max-width: 576px) {
-            gap: 10px;
+        @media (max-width: 768px) {
+            gap: 15px;
         }
     }
 
     &__social-item {
         display: flex;
-        align-items: flex-end;
-        gap: 11px;
+        // align-items: baseline;
+        gap: 10px;
 
-        @media (max-width: 576px) {
-            gap: 4px;
+        @media (max-width: 768px) {
+            gap: 5px;
         }
 
+    }
+
+    &__social-img--mrg {
+        // margin-left: 8px;
+        // margin-right: 3px;
     }
 
     &__social-link {
@@ -55,7 +60,7 @@
                 text-decoration-line: underline;
                 text-underline-offset: 4px;
             }
-    
+
             &:active {
                 text-decoration-line: underline;
                 text-underline-offset: 4px;

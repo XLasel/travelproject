@@ -1,7 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CopyWebpackPlagin = require('copy-webpack-plugin');
+const CopyWebpackPlagin = require('copy-webpack-plugin');
 
 const mode = process.env.MODE_ENV || 'development';
 const devMode = mode === 'development';
@@ -37,18 +37,18 @@ module.exports = {
             template: './index.html',
             inject: 'body'
         }),
-        // new CopyWebpackPlagin({
-        //     patterns: [
-        //         {
-        //             from: 'img',
-        //             to: 'img'
-        //         },
-        //         {
-        //             from: path.resolve(__dirname, 'src/favicon.ico'),
-        //             to: path.resolve(__dirname, 'dist')
-        //         }
-        //     ]
-        // }),
+        new CopyWebpackPlagin({
+            patterns: [
+                // {
+                //     from: 'img',
+                //     to: 'img'
+                // },
+                {
+                    from: './favicon.ico',
+                    to: path.resolve(__dirname, 'dist')
+                }
+            ]
+        }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash:10].css'
         })
