@@ -27,28 +27,21 @@ module.exports = {
     devServer: {
         port: 9000,
         open: true,
-        hot: true,
-        // static: {
-        //     directory: path.join(__dirname, './dist'),
-        // },
+        hot: true
     },
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html',
             inject: 'body'
         }),
-        new CopyWebpackPlagin({
-            patterns: [
-                // {
-                //     from: 'img',
-                //     to: 'img'
-                // },
-                {
-                    from: './favicon.ico',
-                    to: path.resolve(__dirname, 'dist')
-                }
-            ]
-        }),
+        // new CopyWebpackPlagin({
+        //     patterns: [
+        //         {
+        //             from: './favicon.ico',
+        //             to: path.resolve(__dirname, 'dist')
+        //         }
+        //     ]
+        // }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash:10].css'
         })
