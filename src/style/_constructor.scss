@@ -8,10 +8,11 @@
     }
 
     &__form {
+        @extend %main-border-radius;
+        
         width: 100%;
         padding: 70px;
         background: $white;
-        @extend %main-border-radius;
 
         @media (min-width: 768px) and (max-width: 1024px) {
             padding: 60px;
@@ -163,16 +164,17 @@
     }
 
     &__form-date {
-        text-transform: uppercase;
+        -webkit-appearance: none;
         height: 68px;
+        text-transform: uppercase;
 
         @media (max-width: 768px) {
-            padding: 9px;
             height: 43px;
+            padding: 9px;
         }
 
         &::-webkit-calendar-picker-indicator {
-            display: none;
+            opacity: 0;
         }
     }
 
@@ -218,10 +220,11 @@
     }
 
     &__form-radio-label {
-        cursor: pointer;
         display: flex;
         align-items: center;
         gap: 11px;
+        
+        cursor: pointer;
 
         & input {
             position: absolute;

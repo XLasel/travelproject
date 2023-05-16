@@ -13,13 +13,16 @@
 }
 
 .ticket {
+    @extend %main-border-radius;
+    
+    position: relative;
+    
     max-width: 1170px;
     height: 567px;
-    @extend %main-border-radius;
+    
     background: linear-gradient(270deg,
             rgba(0, 0, 0, 0) 0.01%,
             rgba(0, 0, 0, 0.2) 100%);
-    position: relative;
 
     overflow: hidden;
 
@@ -66,24 +69,35 @@
 
     &__tittle {
         margin-bottom: 37px;
-        // margin-bottom: 0.89em;
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
             margin-bottom: 20px;
         }
     }
 
     &__text {
-        &> :not(:last-child) {
-            margin-bottom: 1.4em;
+        & > * {
+            margin-bottom: 28px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 23px;
+            }
         }
     }
 
     &__list {
         padding-left: 30px;
 
+        @media (max-width: 768px) {
+            padding-left: 24px;
+        }
+
         & li::marker {
             font-size: 16px;
+
+            @media (max-width: 768px) {
+                font-size: 13px;
+            }
         }
     }
 

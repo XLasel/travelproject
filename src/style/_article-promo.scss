@@ -14,10 +14,12 @@
     }
 
     &__img {
+        @extend %main-border-radius;
+
         width: 370px;
         height: 370px;
         object-fit: cover;
-        @extend %main-border-radius;
+
 
         @media (max-width: 668px) {
             width: 130px;
