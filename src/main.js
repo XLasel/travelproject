@@ -7,7 +7,6 @@ const resetButton = constructorForm.querySelector('button[type="reset"]')
 
 const headerNavWrapp = document.querySelector('.header__nav-wrapper');
 const header = document.querySelector('.header');
-const headerNavHeight = headerNavWrapp.offsetHeight;
 
 select.addEventListener('change', () => {
   const value = select.value;
@@ -115,7 +114,7 @@ const makeNavToFixed = () => {
   function addFixed() {
     if (!statusFixed) {
       headerNavWrapp.classList.add('header__nav-wrapper--fixed');
-      header.style.paddingTop = `${headerNavHeight}px`;
+      header.classList.add('header--nav-fixed');
       statusFixed = true;
     }
   }
@@ -123,7 +122,7 @@ const makeNavToFixed = () => {
   function removeFixed() {
     if (statusFixed) {
       headerNavWrapp.classList.remove('header__nav-wrapper--fixed');
-      header.style.paddingTop = 0;
+      header.classList.remove('header--nav-fixed');
       statusFixed = false;
     }
   }

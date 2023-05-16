@@ -207,6 +207,9 @@
 
     &__form-fieldset {
         all: unset;
+        
+        display: flex;
+        flex-direction: column;
 
         & legend {
             margin-bottom: 8px;
