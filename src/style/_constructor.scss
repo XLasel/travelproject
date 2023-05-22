@@ -78,6 +78,8 @@
     &__form-date {
         @extend %p-normal;
 
+        cursor: pointer;
+
         display: block;
         width: 100%;
         padding: 19px;

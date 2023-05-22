@@ -14,6 +14,8 @@
 
 .ticket {
     @extend %main-border-radius;
+
+    cursor: pointer;
     
     position: relative;
     

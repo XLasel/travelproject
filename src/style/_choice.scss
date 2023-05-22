@@ -79,6 +79,7 @@
 .card {
     @extend %main-border-radius;
     position: relative;
+    cursor: pointer;
     
     height: 531px;
     overflow: hidden;

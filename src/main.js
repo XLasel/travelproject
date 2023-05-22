@@ -1,12 +1,14 @@
+const smoothScrollLinks = document.querySelectorAll('.header__link');
 const constructorForm = document.querySelector('.constructor__form')
 const select = document.getElementById('select__type');
 const inputDate = constructorForm.querySelectorAll('input[type="date"]');
 const dateFromInput = document.getElementById('date-from');
 const dateToInput = document.getElementById('date-to');
 const resetButton = constructorForm.querySelector('button[type="reset"]')
-
 const headerNavWrapp = document.querySelector('.header__nav-wrapper');
 const header = document.querySelector('.header');
+
+let scrollById = false;
 
 select.addEventListener('change', () => {
   const value = select.value;
@@ -28,16 +30,22 @@ inputDate.forEach(elem => {
 
 resetButton.addEventListener('click', makeFromDeafult)
 
+smoothScrollLinks.forEach(link => {
+  link.addEventListener('click', smoothScroll);
+});
+
 const removeWarning = (input) => {
   if (input.classList.contains('constructor__form-input--invalid')) {
-  input.classList.remove('constructor__form-input--invalid');
+    input.classList.remove('constructor__form-input--invalid');
   }
 }
+
 const addWarning = (input) => {
   if (!input.classList.contains('constructor__form-input--invalid')) {
     input.classList.add('constructor__form-input--invalid');
   }
 }
+
 const verifyFormDate = () => {
   let currentDate;
   let correctDate;
@@ -91,14 +99,14 @@ const makeNavToFixed = () => {
       removeHidden();
     }
 
-    if (scrollPos > 1240 & scrollPos > prevScrollPos) {
+    if (scrollPos > 1240 & scrollPos > prevScrollPos && !scrollById) {
       toDown++;
       toUp = 0;
       if (toDown > 30) {
         addHidden();
       }
     }
-    if (requiredScroll && scrollPos < prevScrollPos) {
+    if (requiredScroll && scrollPos < prevScrollPos && !scrollById) {
       toDown = 0;
       toUp++;
       if (toUp > 25) {
@@ -140,6 +148,29 @@ const makeNavToFixed = () => {
       statusHidden = false;
     }
   }
+}
+
+
+function smoothScroll(event) {
+  event.preventDefault();
+
+  const targetId = this.getAttribute('href');
+  const targetElement = document.querySelector(targetId);
+
+
+  const targetPosition = targetElement.offsetTop;
+  const offsetPosition = targetPosition - 88;
+
+  scrollById = true;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  });
+
+  setTimeout(() => {
+    scrollById = false;
+  }, 3000);
 }
 
 document.addEventListener('DOMContentLoaded', makeNavToFixed);

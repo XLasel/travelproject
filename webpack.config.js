@@ -1,12 +1,12 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CopyWebpackPlagin = require('copy-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const mode = process.env.MODE_ENV || 'development';
 const devMode = mode === 'development';
-const target = 'devMode' ? 'web' : 'browserlist';
-const devtool = devMode ? 'source-map' : undefined;
+const target = devMode ? "web" : "browserslist";
+const devtool = devMode ? "source-map" : undefined;
 
 module.exports = {
     mode,
@@ -17,45 +17,40 @@ module.exports = {
     output: {
         filename: '[name].[contenthash:10].js',
         path: path.resolve(__dirname, 'dist'),
-        clean: true
+        clean: true,
     },
     optimization: {
         splitChunks: {
-            chunks: 'all'
-        }
+            chunks: 'all',
+        },
+        minimizer: [
+            new CssMinimizerPlugin(),
+        ],
     },
     devServer: {
         port: 9000,
         open: true,
-        hot: true
+        hot: true,
     },
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html',
-            inject: 'body'
+            inject: 'body',
         }),
-        // new CopyWebpackPlagin({
-        //     patterns: [
-        //         {
-        //             from: './favicon.ico',
-        //             to: path.resolve(__dirname, 'dist')
-        //         }
-        //     ]
-        // }),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash:10].css'
-        })
+            filename: '[name].[contenthash:10].css',
+        }),
     ],
     module: {
         rules: [
             {
                 test: /\.html$/i,
-                loader: 'html-loader'
+                loader: 'html-loader',
             },
             {
                 test: /\.(c|sa|sc)ss$/i,
                 use: [
-                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     {
                         loader: 'postcss-loader',
@@ -66,9 +61,7 @@ module.exports = {
                         },
                     },
                     'group-css-media-queries-loader',
-                    {
-                        loader: 'resolve-url-loader',
-                    },
+                    'resolve-url-loader',
                     {
                         loader: 'sass-loader',
                         options: {
@@ -79,32 +72,33 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|webp|gif|svg)$/i,
-                use: devMode
-                    ? []
-                    : [
-                        {
-                            loader: 'image-webpack-loader',
-                            options: {
-                                mozjpeg: {
-                                    progressive: true,
-                                },
-                                optipng: {
-                                    enabled: false,
-                                },
-                                pngquant: {
-                                    quality: [0.65, 0.9],
-                                    speed: 4,
-                                },
-                                gifsicle: {
-                                    interlaced: false,
-                                },
-                                webp: {
-                                    quality: 75,
-                                },
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name].[hash:6][ext]',
+                },
+                use: [
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                            },
+                            optipng: {
+                                enabled: false,
+                            },
+                            pngquant: {
+                                quality: [0.65, 0.9],
+                                speed: 4,
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            webp: {
+                                quality: 75,
                             },
                         },
-                    ],
-                type: 'asset/resource',
+                    },
+                ],
             },
             {
                 test: /\.m?js$/i,
@@ -116,6 +110,6 @@ module.exports = {
                     },
                 },
             },
-        ]
-    }
+        ],
+    },
 };
