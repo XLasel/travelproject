@@ -117,9 +117,14 @@ const makeNavToFixed = () => {
 function smoothScroll(event) {
   event.preventDefault();
 
-  const targetId = event.target.getAttribute('href');
-  const targetElement = document.querySelector(targetId);
+  const targetLink = event.target.closest('a');
 
+  if (!targetLink) {
+    return;
+  }
+
+  const targetId  = targetLink.getAttribute('href');
+  const targetElement = document.querySelector(targetId);
 
   const targetPosition = targetElement.offsetTop;
   const offsetPosition = targetPosition - 88;
