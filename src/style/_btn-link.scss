@@ -2,16 +2,15 @@
     @extend %p-big;
     @extend %main-border-radius;
 
+    display: block;
+
+    position: relative;
+
     text-decoration: none;
 
     width: 199px;
-    padding: 7px 20px;
+    padding: 7px 50px 7px 20px;
     margin: -7px -20px;
-
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
 
     background-color: transparent;
     transition: all 0.3s ease;
@@ -24,14 +23,24 @@
         color: $white;
     }
 
-    &__icon {
-        width: 25px;
-        height: 26px;
+    &::before {
+        content: "";
+
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+
         display: block;
+        width: 24px;
+        height: 26px;
+
         background-image: url(/img/icons/arrow-bt.svg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
+
+        pointer-events: none;
+
     }
 
     @media(any-hover: hover) {
