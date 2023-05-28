@@ -169,6 +169,7 @@
         -webkit-appearance: none;
         height: 68px;
         text-transform: uppercase;
+        letter-spacing: -0.04em;
 
         @media (max-width: 768px) {
             height: 43px;
@@ -231,6 +232,10 @@
         
         cursor: pointer;
 
+        @media (max-width: 768px) {
+            gap: 10px;
+        }
+
         & input {
             position: absolute;
             opacity: 0;
@@ -272,7 +277,7 @@
 
         display: flex;
         align-items: center;
-        gap: 19px;
+        gap: 20px;
 
         @media (max-width: 1024px) {
             gap: 12px;

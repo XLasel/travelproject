@@ -16,12 +16,12 @@
     @extend %main-border-radius;
 
     cursor: pointer;
-    
+
     position: relative;
-    
+
     max-width: 1170px;
     height: 567px;
-    
+
     background: linear-gradient(270deg,
             rgba(0, 0, 0, 0) 0.01%,
             rgba(0, 0, 0, 0.2) 100%);
@@ -61,7 +61,7 @@
         justify-content: space-between;
 
         @media (max-width: 768px) {
-            padding: 30px;
+            padding: 30px 25px 30px 30px;
         }
     }
 
@@ -72,13 +72,21 @@
     &__tittle {
         margin-bottom: 37px;
 
+        &--transfer {
+            @media (max-width: 366px) {
+                display: block;
+                content: "\A";
+                white-space: pre;
+            }
+        }
+
         @media (max-width: 768px) {
             margin-bottom: 20px;
         }
     }
 
     &__text {
-        & > * {
+        &>* {
             margin-bottom: 28px;
 
             @media (max-width: 768px) {

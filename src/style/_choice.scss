@@ -30,10 +30,57 @@
 
         &-item {
 
+            &:nth-child(1) {
+                width: 137px;
+
+                @media (max-width: 768px) {
+                    width: 96px;
+                }
+            }
+
+            &:nth-child(2) {
+                width: 117px;
+
+                @media (max-width: 768px) {
+                    width: 81px;
+                }
+            }
+
+            &:nth-child(3) {
+                width: 87px;
+
+                @media (max-width: 768px) {
+                    width: 60px;
+                }
+            }
+
+            &:nth-child(4) {
+                width: 86px;
+
+                @media (max-width: 768px) {
+                    width: 60px;
+                }
+            }
+
+            &:nth-child(5) {
+                width: 153px;
+
+                @media (max-width: 768px) {
+                    width: 106px;
+                }
+
+            }
+
             &--desktop {
                 color: $orange200;
                 text-decoration: underline;
-                text-underline-offset: 0.45em;
+                text-underline-offset: 9px;
+                text-decoration-thickness: 2px;
+
+                @media (max-width: 768px) {
+                    text-underline-offset: 4px;
+                    text-decoration-thickness: 2px;
+                }
             }
 
         }
@@ -44,7 +91,13 @@
             @media(any-hover: hover) {
                 &:hover {
                     text-decoration: underline;
-                    text-underline-offset: 0.45em;
+                    text-underline-offset: 9px;
+                text-decoration-thickness: 2px;
+
+                @media (max-width: 768px) {
+                    text-underline-offset: 4px;
+                    text-decoration-thickness: 2px;
+                }
                 }
             }
         }
@@ -80,7 +133,7 @@
     @extend %main-border-radius;
     position: relative;
     cursor: pointer;
-    
+
     height: 531px;
     overflow: hidden;
     background: linear-gradient(360deg,
@@ -128,7 +181,7 @@
 
     &__title {
         margin-bottom: 16px;
-        
+
         @media (max-width: 768px) {
             margin-bottom: 13px;
         }

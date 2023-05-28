@@ -45,6 +45,31 @@
             gap: 5px;
         }
 
+        
+        &:nth-child(1) .footer__social-link  {
+            width: 90px;
+
+            @media (max-width: 768px) {
+                width: 72px;
+            }
+        }
+
+        &:nth-child(2) .footer__social-link  {
+            width: 84px;
+
+            @media (max-width: 768px) {
+                width: 67px;
+            }
+        }
+
+        &:nth-child(3) .footer__social-link {
+            width: 87px;
+
+            @media (max-width: 768px) {
+                width: 70px;
+            }
+        }
+
     }
 
     &__social-link {

@@ -47,7 +47,7 @@
 
     &__nav {
         margin: 0 auto;
-        max-width: 1283px;
+        max-width: 1282px;
         padding: 0 57px;
         height: 100%;
 
@@ -99,6 +99,22 @@
                 text-underline-offset: 7px;
                 text-decoration-thickness: 1px;
             }
+        }
+    }
+
+    
+    &__item {
+        &:nth-child(1) {
+            width: 48px;
+        }
+        &:nth-child(2) {
+            width: 114px;
+        }
+        &:nth-child(3) {
+            width: 76px;
+        }
+        &:nth-child(4) {
+            width: 80px;
         }
     }
 

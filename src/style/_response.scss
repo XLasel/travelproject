@@ -45,6 +45,12 @@
 
         line-height: normal;
 
+        & p {
+            @media (max-width: 768px) {
+                width: 98%;
+            }
+        }
+
         & p:not(:last-of-type) {
             margin-bottom: 28px;
             
