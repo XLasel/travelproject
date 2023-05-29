@@ -8,21 +8,20 @@
 
     text-decoration: none;
 
-    height: 40px;
     width: 199px;
     padding: 7px 58px 7px 20px;
-    margin: -6px -20px;
+    margin: -7px -20px;
 
     background-color: transparent;
     transition: all 0.3s ease;
 
     @media (max-width: 768px) {
         width: 163px;
-        margin: -7px -20px;
+        padding: 9.5px 58px 9.5px 20px;
+        margin: -8px -20px;
     }
 
     &__text {
-        vertical-align: text-top;
         color: $white;
     }
 
