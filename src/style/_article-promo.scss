@@ -28,7 +28,7 @@
     }
 
     &__info {
-        width: 371px;
+        max-width: 371px;
 
         & a {
             @extend %link;

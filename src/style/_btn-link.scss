@@ -54,5 +54,16 @@
             background-color: $orange200;
         }
     }
+    
+    @media(any-hover: hover) {
+        .card:hover &,
+        .ticket:hover & {
+            background-color: $green400;
+        }
+        .card:hover &:active,
+        .ticket:hover &:active {
+            background-color: $orange200;
+        }
+    }
 
 }

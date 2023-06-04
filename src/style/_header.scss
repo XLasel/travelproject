@@ -176,6 +176,7 @@
     &__btn {
         @extend %p-small;
 
+        width: 118px;
         padding: 5px 20px;
         border-radius: 10px;
 
@@ -185,6 +186,10 @@
         transition: all 0.3s ease;
 
         cursor: pointer;
+
+        @media(max-width: 768px) {
+            width: 114px;
+        }
 
         @media(any-hover: hover) {
             &:hover {

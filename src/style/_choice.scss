@@ -88,16 +88,11 @@
         &-link {
             text-decoration: none;
 
-            @media(any-hover: hover) {
+            @media(any-hover: hover) and (min-width: 769px) {
                 &:hover {
                     text-decoration: underline;
                     text-underline-offset: 9px;
-                text-decoration-thickness: 2px;
-
-                @media (max-width: 768px) {
-                    text-underline-offset: 4px;
                     text-decoration-thickness: 2px;
-                }
                 }
             }
         }
@@ -116,7 +111,7 @@
     }
 
     &__card {
-        flex-basis: calc(33.33% - 20px);
+        flex-basis: calc((100%/3) - 20px);
 
         @media (min-width: 668px) and (max-width: 1024px) {
             flex-basis: calc(50% - 9px);
@@ -152,6 +147,14 @@
     @media(any-hover: hover) {
         &:hover img {
             transform: scale(1.2);
+        }
+
+        &:hover .btn-details {
+            background-color: $green400;
+        }
+
+        &:hover .btn-details:active {
+            background-color: $orange200;
         }
     }
 
