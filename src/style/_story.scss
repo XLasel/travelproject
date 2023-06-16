@@ -44,7 +44,7 @@
         transition: transform 300ms ease;
     }
 
-    @media(any-hover: hover) {
+    @media (hover: hover) and (pointer: fine) {
         &:hover img {
             transform: scale(1.2);
         }
@@ -133,7 +133,7 @@
         text-decoration: none;
         transition: color 0.3s ease;
 
-        @media(any-hover: hover) {
+        @media (hover: hover) and (pointer: fine) {
             &:hover {
                 text-decoration-line: underline;
                 text-underline-offset: 6px;

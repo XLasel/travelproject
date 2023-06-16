@@ -93,28 +93,12 @@
             display: none;
         }
 
-        @media(any-hover: hover) {
+        @media (hover: hover) and (pointer: fine) and (min-width: 769px) {
             & a:hover {
                 text-decoration-line: underline;
                 text-underline-offset: 7px;
                 text-decoration-thickness: 1px;
             }
-        }
-    }
-
-    
-    &__item {
-        &:nth-child(1) {
-            width: 48px;
-        }
-        &:nth-child(2) {
-            width: 114px;
-        }
-        &:nth-child(3) {
-            width: 76px;
-        }
-        &:nth-child(4) {
-            width: 80px;
         }
     }
 
@@ -176,7 +160,6 @@
     &__btn {
         @extend %p-small;
 
-        width: 118px;
         padding: 5px 20px;
         border-radius: 10px;
 
@@ -187,11 +170,7 @@
 
         cursor: pointer;
 
-        @media(max-width: 768px) {
-            width: 114px;
-        }
-
-        @media(any-hover: hover) {
+        @media (hover: hover) and (pointer: fine) {
             &:hover {
                 background-color: $orange200;
             }

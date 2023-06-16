@@ -45,21 +45,14 @@
 
     }
 
-    @media(any-hover: hover) {
-        &:hover {
-            background-color: $green400;
-        }
-
-        &:active {
-            background-color: $orange200;
-        }
-    }
-    
-    @media(any-hover: hover) {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover,
         .card:hover &,
         .ticket:hover & {
             background-color: $green400;
         }
+
+        &:active,
         .card:hover &:active,
         .ticket:hover &:active {
             background-color: $orange200;
