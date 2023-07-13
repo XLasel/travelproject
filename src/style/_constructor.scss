@@ -88,7 +88,7 @@
         border: 1px solid $beige100;
         transition: all 0.3s ease;
 
-        @media (hover: hover) and (pointer: fine) {
+        @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
             &:focus {
                 background-color: $beige200;
                 border-color: $gray300;
@@ -188,7 +188,7 @@
     &__form-input--invalid {
         border: 1px solid #f1c5c8;
 
-        @media (hover: hover) and (pointer: fine) {
+        @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
             &:focus {
                 border-color: #f1c5c8;
             }
@@ -368,7 +368,7 @@
             height: 47px;
         }
 
-        @media (hover: hover) and (pointer: fine) {
+        @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
             &:hover {
                 background-color: $gray100;
             }
@@ -382,7 +382,7 @@
             color: $white;
             background-color: $green400;
 
-            @media (hover: hover) and (pointer: fine) {
+            @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
                 &:hover {
                     background-color: $green300;
                 }

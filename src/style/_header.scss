@@ -93,7 +93,7 @@
             display: none;
         }
 
-        @media (hover: hover) and (pointer: fine) and (min-width: 769px) {
+        @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
             & a:hover {
                 text-decoration-line: underline;
                 text-underline-offset: 7px;
@@ -170,7 +170,7 @@
 
         cursor: pointer;
 
-        @media (hover: hover) and (pointer: fine) {
+        @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
             &:hover {
                 background-color: $orange200;
             }

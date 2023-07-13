@@ -20,28 +20,20 @@
 
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
         gap: 30px;
 
         @media (max-width: 576px) {
+            flex-wrap: wrap;
             gap: 10px;
         }
 
         &-item {
-            @media (hover: hover) and (pointer: fine) and (min-width: 769px) {
+            @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
                 &:hover {
                     text-decoration: underline;
                     text-underline-offset: 9px;
-                    text-decoration-thickness: 2px;
-                }
-            }
-
-
-            @media (hover: hover) and (pointer: fine) and (max-width: 768px) {
-                &:hover {
-                    text-decoration: underline;
-                    text-underline-offset: 4px;
                     text-decoration-thickness: 2px;
                 }
             }
@@ -151,7 +143,7 @@
         transition: transform 300ms ease;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
         &:hover &__image {
             transform: scale(1.2);
         }
